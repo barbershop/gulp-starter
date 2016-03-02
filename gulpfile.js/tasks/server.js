@@ -6,6 +6,8 @@ var gutil    = require('gulp-util')
 var logger   = require('morgan')
 var open     = require('open')
 var path     = require('path')
+var auth = require('basic-auth-connect')
+var app = express()
 
 var settings = {
   root: path.resolve(process.cwd(), config.root.dest),
@@ -20,9 +22,16 @@ var settings = {
 var serverTask = function() {
   var url = 'http://localhost:' + settings.port
 
-  express()
+  app
     .use(compress())
     .use(logger(settings.logLevel))
+
+    // add auth
+   if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'staging' ){
+     app.use(auth(process.env.AUTH_USER || 'admin', process.env.AUTH_PASS || 'testing'))
+   }
+
+   app
     .use('/', express.static(settings.root, settings.staticOptions))
     .listen(settings.port)
 
