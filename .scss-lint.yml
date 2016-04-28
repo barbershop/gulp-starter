@@ -1,9 +1,5 @@
 linters:
-  ColorVariable:
-    enabled: false
-  EmptyLineBetweenBlocks:
-    enabled: false
-  NameFormat:
+  Indentation:
     enabled: false
   PropertySortOrder:
     order:

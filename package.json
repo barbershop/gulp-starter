@@ -78,8 +78,11 @@
     "webpack": "1.12.14",
     "webpack-dev-middleware": "1.5.1",
     "webpack-hot-middleware": "2.10.0",
-	"basic-auth-connect": "1.0.0",
+    "basic-auth-connect": "1.0.0",
     "normalize.css": "^4.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-airbnb": "8.0.0"
+  }
 }
