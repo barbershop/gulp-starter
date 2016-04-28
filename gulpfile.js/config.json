@@ -19,14 +19,16 @@
     "js": {
       "src": "javascripts",
       "dest": "javascripts",
-      "extractSharedJs": true,
       "entries": {
-        "app": ["./app.js"],
-        "page": ["./page.js"]
+        "app": ["./app.js"]
       },
-      "extensions": ["js"]
+      "extensions": ["js", "json"],
+      "babel": {
+        "presets": ["es2015", "stage-1"],
+        "plugins": []
+      },
+      "extractSharedJs": false
     },
-
     "css": {
       "src": "stylesheets",
       "dest": "stylesheets",
@@ -34,7 +36,10 @@
         "browsers": ["last 3 version"]
       },
       "sass": {
-        "indentedSyntax": true
+        "indentedSyntax": true,
+        "includePaths": [
+          "./node_modules/normalize.css"
+        ]
       },
       "extensions": ["sass", "scss", "css"]
     },
@@ -70,9 +75,13 @@
     },
 
     "svgSprite": {
-      "src": "sprites",
+      "src": "icons",
       "dest": "images",
       "extensions": ["svg"]
+    },
+
+    "production" : {
+      "rev": true
     }
   }
 }

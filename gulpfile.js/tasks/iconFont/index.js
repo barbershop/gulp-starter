@@ -22,10 +22,8 @@ var settings = {
   fontPath: url.resolve('.',path.relative(cssPath, fontPath)),
   className: 'icon',
   options: {
-    svg: true,
     timestamp: 0, // see https://github.com/fontello/svg2ttf/issues/33
     fontName: 'icons',
-    appendUnicode: true,
     normalize: false,
     formats: config.tasks.iconFont.extensions
   }
