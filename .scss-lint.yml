@@ -1,6 +1,8 @@
 linters:
   Indentation:
     enabled: false
+  NameFormat:
+    convention: camel_case
   PropertySortOrder:
     order:
       - content

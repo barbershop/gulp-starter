@@ -1,0 +1,54 @@
+@mixin fontSmoothing {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+	// Based on http://codepen.io/javasteve99/pen/hDxpn
+@mixin fontFace($fontFamily, $filePath, $fontWeight: normal, $fontStyle: normal) {
+@font-face {
+	font-family: $fontFamily;
+	src: url('#{$filePath}.eot');
+	src: url('#{$filePath}.woff2') format('woff2'), url('#{$filePath}.woff') format('woff'), url('#{$filePath}.ttf') format('truetype'), url('#{$filePath}.svg##{$fontFamily}') format('svg');
+	font-weight: $fontWeight;
+	font-style: $fontStyle;
+
+	// Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@font-face {
+			font-family: $fontFamily;
+			src: url('#{$filePath}.svg##{$fontFamily}') format('svg');
+		}
+	}
+}
+}
+
+// Media Queries
+@mixin gtMobile {
+	@media screen and (min-width: #{$mobile}) {
+		@content;
+	}
+}
+
+@mixin gtPhablet {
+	@media screen and (min-width: #{$phablet}) {
+		@content;
+	}
+}
+
+@mixin gtTablet {
+	@media screen and (min-width: #{$tablet}) {
+		@content;
+	}
+}
+
+@mixin gtDesktop {
+	@media screen and (min-width: #{$desktop}) {
+		@content;
+	}
+}
+
+@mixin gtDesktopHD {
+	@media screen and (min-width: #{$desktopHD}) {
+		@content;
+	}
+}
