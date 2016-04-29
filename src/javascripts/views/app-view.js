@@ -1,4 +1,4 @@
-import Backbone from 'backbone';
+import Backbone from 'backbone'; // eslint-disable-line
 
 const AppView = Backbone.View.extend({
 	'el': 'body',

@@ -1,4 +1,4 @@
-import Backbone from 'backbone';
+import Backbone from 'backbone'; // eslint-disable-line
 import app from '../helpers/app';
 import AppView from '../views/app-view';
 

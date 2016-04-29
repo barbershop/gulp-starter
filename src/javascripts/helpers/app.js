@@ -1,4 +1,4 @@
-import Backbone from 'backbone';
+import Backbone from 'backbone'; // eslint-disable-line
 import _ from 'lodash';
 
 let app;
@@ -75,7 +75,7 @@ App.prototype.track = (data) => {
 };
 
 
-module.exports = function() {
+module.exports = () => {
 	if (!app) app = new App();
 	return app;
-}();
+};
