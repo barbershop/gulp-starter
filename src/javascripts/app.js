@@ -1,3 +1,9 @@
-import './modules'
+import Backbone from 'backbone';
+import $ from 'jquery';
+import Router from 'routers/router';
 
-console.log(`app.js has loaded!`)
+Backbone.$ = $;
+
+const router = new Router();
+
+Backbone.history.start();
