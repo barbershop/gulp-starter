@@ -75,7 +75,7 @@ App.prototype.track = (data) => {
 };
 
 
-module.exports = () => {
+module.exports = function() {
 	if (!app) app = new App();
 	return app;
-};
+}();
