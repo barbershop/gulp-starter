@@ -10,13 +10,13 @@ function App() {
 	_.extend(this, Backbone.Events);
 }
 
-
-App.prototype.isMediaQuery = (mediaQuery) => {
-	if (Modernizr.mq(this.mediaQueries[mediaQuery])) {
-		return true;
-	}
-	return false;
-};
+/** For use with Modernizr **/
+// App.prototype.isMediaQuery = (mediaQuery) => {
+// 	if (Modernizr.mq(this.mediaQueries[mediaQuery])) {
+// 		return true;
+// 	}
+// 	return false;
+// };
 
 App.prototype.isMobile = () => {
 	return (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
