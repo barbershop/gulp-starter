@@ -3,11 +3,11 @@ import Backbone from 'backbone'; // eslint-disable-line
 const AppView = Backbone.View.extend({
 	'el': 'body',
 	'events': {},
-	'initialize': () => {
+	'initialize': function() {
 		console.log('AppView: Initialized');
 	},
 
-	'render': () => {
+	'render': function() {
 	}
 });
 
